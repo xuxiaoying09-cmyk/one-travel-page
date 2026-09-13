@@ -1,0 +1,3254 @@
+{
+  "$schema": "./schemas/trip-data.schema.json",
+  "schemaVersion": "2.0-lite",
+  "config": {
+    "schemaVersion": "1.0.0",
+    "modules": {
+      "flights": true,
+      "overview": true,
+      "itinerary": true,
+      "todo": true,
+      "driving": true,
+      "ledger": true
+    },
+    "language": "zh-CN",
+    "persistence": {
+      "mode": "local"
+    }
+  },
+  "metadata": {
+    "tripId": "switzerland-italy-13days-example",
+    "title": "瑞士 × 意大利 · 13 天旅行计划",
+    "language": "zh-CN",
+    "assets": {
+      "routeMaps": [
+        "assets/maps/templates/template-07-compact-basin.webp"
+      ]
+    }
+  },
+  "trip": {
+    "status": "draft",
+    "startDate": "2026-09-30",
+    "endDate": "2026-10-12",
+    "dayCount": 13,
+    "nightCountAway": 12,
+    "countries": [
+      {
+        "code": "CH",
+        "name": "Switzerland",
+        "nameZh": "瑞士"
+      },
+      {
+        "code": "IT",
+        "name": "Italy",
+        "nameZh": "意大利"
+      }
+    ],
+    "primaryDestinationCountries": [
+      "CH",
+      "IT"
+    ],
+    "citiesAndAreas": [
+      "苏黎世",
+      "卢塞恩",
+      "因特拉肯",
+      "米兰",
+      "佛罗伦萨",
+      "罗马"
+    ],
+    "routeSummary": "苏黎世 → 卢塞恩 → 因特拉肯 → 苏黎世还车 → 米兰 → 佛罗伦萨 → 罗马",
+    "groupSize": 2
+  },
+  "flightJourneys": [
+    {
+      "id": "outbound",
+      "title": "深圳 → 新加坡 → 苏黎世"
+    },
+    {
+      "id": "inbound",
+      "title": "罗马 → 新加坡 → 深圳"
+    }
+  ],
+  "flights": [
+    {
+      "id": "out-1",
+      "journeyId": "outbound",
+      "sequence": 1,
+      "airline": {
+        "name": "Singapore Airlines",
+        "nameZh": "新加坡航空"
+      },
+      "flightNumber": "SQ857",
+      "departure": {
+        "airportCode": "SZX",
+        "city": "深圳",
+        "cityZh": "深圳",
+        "date": "2026-09-29",
+        "time": "18:30",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "SIN",
+        "city": "新加坡",
+        "cityZh": "新加坡",
+        "date": "2026-09-29",
+        "time": "22:30",
+        "utcOffset": "+08:00"
+      }
+    },
+    {
+      "id": "out-2",
+      "journeyId": "outbound",
+      "sequence": 2,
+      "airline": {
+        "name": "Singapore Airlines",
+        "nameZh": "新加坡航空"
+      },
+      "flightNumber": "SQ346",
+      "departure": {
+        "airportCode": "SIN",
+        "city": "新加坡",
+        "cityZh": "新加坡",
+        "date": "2026-09-30",
+        "time": "01:55",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "ZRH",
+        "city": "苏黎世",
+        "cityZh": "苏黎世",
+        "date": "2026-09-30",
+        "time": "08:15",
+        "utcOffset": "+02:00"
+      },
+      "connectionFromPrevious": {
+        "plannedDurationText": "3小时25分钟"
+      }
+    },
+    {
+      "id": "back-1",
+      "journeyId": "inbound",
+      "sequence": 1,
+      "airline": {
+        "name": "Singapore Airlines",
+        "nameZh": "新加坡航空"
+      },
+      "flightNumber": "SQ365",
+      "departure": {
+        "airportCode": "FCO",
+        "city": "罗马",
+        "cityZh": "罗马",
+        "date": "2026-10-12",
+        "time": "12:00",
+        "utcOffset": "+02:00"
+      },
+      "arrival": {
+        "airportCode": "SIN",
+        "city": "新加坡",
+        "cityZh": "新加坡",
+        "date": "2026-10-13",
+        "time": "06:00",
+        "utcOffset": "+08:00"
+      }
+    },
+    {
+      "id": "back-2",
+      "journeyId": "inbound",
+      "sequence": 2,
+      "airline": {
+        "name": "Singapore Airlines",
+        "nameZh": "新加坡航空"
+      },
+      "flightNumber": "SQ856",
+      "departure": {
+        "airportCode": "SIN",
+        "city": "新加坡",
+        "cityZh": "新加坡",
+        "date": "2026-10-13",
+        "time": "08:00",
+        "utcOffset": "+08:00"
+      },
+      "arrival": {
+        "airportCode": "SZX",
+        "city": "深圳",
+        "cityZh": "深圳",
+        "date": "2026-10-13",
+        "time": "12:00",
+        "utcOffset": "+08:00"
+      },
+      "connectionFromPrevious": {
+        "plannedDurationText": "2小时"
+      }
+    }
+  ],
+  "accommodations": [
+    {
+      "id": "stay-1",
+      "day": 1,
+      "name": "苏黎世住宿待补充",
+      "city": "苏黎世",
+      "status": "pending"
+    },
+    {
+      "id": "stay-2",
+      "day": 2,
+      "name": "卢塞恩住宿待补充",
+      "city": "卢塞恩",
+      "status": "pending"
+    },
+    {
+      "id": "stay-3",
+      "day": 3,
+      "name": "卢塞恩住宿待补充",
+      "city": "卢塞恩",
+      "status": "pending"
+    },
+    {
+      "id": "stay-4",
+      "day": 4,
+      "name": "因特拉肯住宿待补充",
+      "city": "因特拉肯",
+      "status": "pending"
+    },
+    {
+      "id": "stay-5",
+      "day": 5,
+      "name": "因特拉肯住宿待补充",
+      "city": "因特拉肯",
+      "status": "pending"
+    },
+    {
+      "id": "stay-6",
+      "day": 6,
+      "name": "因特拉肯住宿待补充",
+      "city": "因特拉肯",
+      "status": "pending"
+    },
+    {
+      "id": "stay-7",
+      "day": 7,
+      "name": "米兰住宿待补充",
+      "city": "米兰",
+      "status": "pending"
+    },
+    {
+      "id": "stay-8",
+      "day": 8,
+      "name": "米兰住宿待补充",
+      "city": "米兰",
+      "status": "pending"
+    },
+    {
+      "id": "stay-9",
+      "day": 9,
+      "name": "佛罗伦萨住宿待补充",
+      "city": "佛罗伦萨",
+      "status": "pending"
+    },
+    {
+      "id": "stay-10",
+      "day": 10,
+      "name": "佛罗伦萨住宿待补充",
+      "city": "佛罗伦萨",
+      "status": "pending"
+    },
+    {
+      "id": "stay-11",
+      "day": 11,
+      "name": "罗马住宿待补充",
+      "city": "罗马",
+      "status": "pending"
+    },
+    {
+      "id": "stay-12",
+      "day": 12,
+      "name": "罗马住宿待补充",
+      "city": "罗马",
+      "status": "pending"
+    }
+  ],
+  "groundTransport": {
+    "rentalCar": {
+      "company": "Avis · 苏黎世机场",
+      "rentalPeriodDays": 6,
+      "vehicle": {
+        "example": "Volkswagen Golf",
+        "class": "紧凑型 · 自动挡 · 5座"
+      },
+      "unlimitedKilometers": true,
+      "price": {
+        "currency": "CHF",
+        "payAtCounter": 580
+      },
+      "insurance": [
+        "车辆损失险：责任范围及自付额以合同为准",
+        "第三者责任保障：额度以合同为准"
+      ],
+      "pickup": {
+        "date": "2026-09-30",
+        "time": "11:00",
+        "location": "苏黎世机场租车中心",
+        "address": "Zurich Airport · Car Rental Center",
+        "utcOffset": "+02:00"
+      },
+      "dropoff": {
+        "date": "2026-10-06",
+        "time": "10:30",
+        "timeZoneLabel": "瑞士当地时间",
+        "vehicleReturnPoint": "苏黎世机场 · 租车还车区",
+        "deadlineWarning": "还车后前往火车站，继续乘列车前往米兰。",
+        "recommendedArrivalTime": "10:00",
+        "utcOffset": "+02:00"
+      }
+    },
+    "rentalChecklist": [
+      "取车时核对车型、油量、里程及合同费用。",
+      "拍摄车身、轮毂和内饰状况，确认已有损伤记录。",
+      "确认加油要求、还车入口与钥匙交接方式。",
+      "还车前清点行李，保留交接凭证。"
+    ],
+    "drivingNotes": [
+      "车辆仅用于瑞士段，意大利城市之间使用铁路。",
+      "每日驾驶时间留有余量，山区活动根据当天路况与天气调整。",
+      "酒店停车位置及费用提前确认。"
+    ],
+    "drivingReferenceLinks": [],
+    "plannedRoadLegs": [],
+    "publicTransitAndRail": []
+  },
+  "days": [
+    {
+      "id": "day-1",
+      "day": 1,
+      "date": "2026-09-30",
+      "title": "抵达苏黎世 · 放慢脚步",
+      "locations": [
+        "苏黎世机场",
+        "苏黎世"
+      ],
+      "schedule": [
+        {
+          "id": "d1-s1",
+          "time": "08:15",
+          "type": "flight",
+          "text": "抵达苏黎世机场，办理入境并提取行李。",
+          "placeId": "zrh"
+        },
+        {
+          "id": "d1-s2",
+          "time": "11:00",
+          "type": "drive",
+          "text": "机场租车中心提车，核对车况后驾车前往苏黎世。",
+          "placeId": "zurich"
+        },
+        {
+          "id": "d1-s3",
+          "time": "下午",
+          "type": "walk",
+          "text": "老城与河畔散步，入住苏黎世，酒店待补充。",
+          "placeId": "zurich"
+        }
+      ]
+    },
+    {
+      "id": "day-2",
+      "day": 2,
+      "date": "2026-10-01",
+      "title": "苏黎世 → 卢塞恩 · 湖城初见",
+      "locations": [
+        "苏黎世",
+        "卢塞恩",
+        "卡佩尔廊桥",
+        "卢塞恩湖畔"
+      ],
+      "schedule": [
+        {
+          "id": "d2-s1",
+          "time": "上午",
+          "type": "drive",
+          "text": "驾车前往卢塞恩，抵达后先停车，再步行游览老城。",
+          "placeId": "lucerne"
+        },
+        {
+          "id": "d2-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "漫步卡佩尔廊桥及老城，留出咖啡和拍照时间。",
+          "placeId": "chapel"
+        },
+        {
+          "id": "d2-s3",
+          "time": "傍晚",
+          "type": "walk",
+          "text": "沿卢塞恩湖畔散步，入住卢塞恩；酒店待补充。",
+          "placeId": "lake"
+        }
+      ]
+    },
+    {
+      "id": "day-3",
+      "day": 3,
+      "date": "2026-10-02",
+      "title": "卢塞恩 · 湖畔留白日",
+      "locations": [
+        "卢塞恩",
+        "卢塞恩湖畔",
+        "卡佩尔廊桥"
+      ],
+      "schedule": [
+        {
+          "id": "d3-s1",
+          "time": "上午",
+          "type": "walk",
+          "text": "湖畔慢行；想乘船可在确认当天班次后替换为游船。",
+          "placeId": "lake"
+        },
+        {
+          "id": "d3-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "自由探索老城，阴雨天可改室内活动。",
+          "placeId": "lucerne"
+        },
+        {
+          "id": "d3-s3",
+          "time": "晚上",
+          "type": "rest",
+          "text": "继续住卢塞恩，给第二天转场保留体力。",
+          "placeId": "lucerne"
+        }
+      ]
+    },
+    {
+      "id": "day-4",
+      "day": 4,
+      "date": "2026-10-03",
+      "title": "卢塞恩 → 因特拉肯 · 湖山公路",
+      "locations": [
+        "卢塞恩",
+        "因特拉肯"
+      ],
+      "schedule": [
+        {
+          "id": "d4-s1",
+          "time": "上午",
+          "type": "drive",
+          "text": "驾车从卢塞恩前往因特拉肯，沿途安排休息；抵达后入住。",
+          "placeId": "interlaken"
+        },
+        {
+          "id": "d4-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "抵达后寄存行李，在小镇散步。",
+          "placeId": "interlaken"
+        },
+        {
+          "id": "d4-s3",
+          "time": "晚上",
+          "type": "check-in",
+          "text": "入住因特拉肯，后两天以这里为住宿基地；酒店待补充。",
+          "placeId": "interlaken"
+        }
+      ]
+    },
+    {
+      "id": "day-5",
+      "day": 5,
+      "date": "2026-10-04",
+      "title": "劳特布伦嫩 · 山谷漫游",
+      "locations": [
+        "因特拉肯",
+        "劳特布伦嫩"
+      ],
+      "schedule": [
+        {
+          "id": "d5-s1",
+          "time": "上午",
+          "type": "drive",
+          "text": "驾车前往劳特布伦嫩，停车后步行探索山谷。",
+          "placeId": "lauterbrunnen"
+        },
+        {
+          "id": "d5-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "村落与山谷步行，以轻松路线为主；雨天缩短户外时间。",
+          "placeId": "lauterbrunnen"
+        },
+        {
+          "id": "d5-s3",
+          "time": "傍晚",
+          "type": "return",
+          "text": "驾车返回因特拉肯住宿。",
+          "placeId": "interlaken"
+        }
+      ]
+    },
+    {
+      "id": "day-6",
+      "day": 6,
+      "date": "2026-10-05",
+      "title": "格林德瓦 · 雪山小镇",
+      "locations": [
+        "因特拉肯",
+        "格林德瓦"
+      ],
+      "schedule": [
+        {
+          "id": "d6-s1",
+          "time": "上午",
+          "type": "drive",
+          "text": "驾车前往格林德瓦，先看天气再决定户外活动。",
+          "placeId": "grindelwald"
+        },
+        {
+          "id": "d6-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "小镇漫步与山景拍照；缆车和高山项目不计入固定行程，开放情况和门票另行确认。",
+          "placeId": "grindelwald"
+        },
+        {
+          "id": "d6-s3",
+          "time": "晚上",
+          "type": "return",
+          "text": "驾车返回因特拉肯住宿。",
+          "placeId": "interlaken"
+        }
+      ]
+    },
+    {
+      "id": "day-7",
+      "day": 7,
+      "date": "2026-10-06",
+      "title": "苏黎世还车 → 米兰 · 跨国转场",
+      "locations": [
+        "因特拉肯",
+        "苏黎世机场",
+        "米兰"
+      ],
+      "schedule": [
+        {
+          "id": "d7-s1",
+          "time": "07:00",
+          "type": "drive",
+          "placeId": "zrh",
+          "text": "从因特拉肯出发，驾车前往苏黎世机场还车，预留交通缓冲。"
+        },
+        {
+          "id": "d7-s2",
+          "time": "10:00",
+          "type": "return",
+          "placeId": "zrh",
+          "text": "抵达还车区，10:30 前完成验车与钥匙交接。"
+        },
+        {
+          "id": "d7-s3",
+          "time": "中午",
+          "type": "transfer",
+          "placeId": "milan",
+          "text": "从机场前往苏黎世主站，换乘列车去米兰；具体车次待确认。"
+        },
+        {
+          "id": "d7-s4",
+          "time": "晚上",
+          "type": "check-in",
+          "placeId": "milan",
+          "text": "抵达米兰后入住，酒店待补充；不安排固定入场预约。"
+        }
+      ]
+    },
+    {
+      "id": "day-8",
+      "day": 8,
+      "date": "2026-10-07",
+      "title": "米兰 · 建筑与街区",
+      "locations": [
+        "米兰",
+        "米兰大教堂",
+        "布雷拉街区"
+      ],
+      "schedule": [
+        {
+          "id": "d8-s1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "游览米兰大教堂；内部与屋顶参观按所选票种和预约时段安排。",
+          "placeId": "duomo",
+          "ticketIds": [
+            "ticket-duomo"
+          ]
+        },
+        {
+          "id": "d8-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "布雷拉街区散步、午餐与自由探索。",
+          "placeId": "brera"
+        },
+        {
+          "id": "d8-s3",
+          "time": "晚上",
+          "type": "rest",
+          "text": "继续住米兰，留出自由晚餐时间。",
+          "placeId": "milan"
+        }
+      ]
+    },
+    {
+      "id": "day-9",
+      "day": 9,
+      "date": "2026-10-08",
+      "title": "米兰 → 佛罗伦萨 · 文艺复兴",
+      "locations": [
+        "米兰",
+        "佛罗伦萨",
+        "圣母百花大教堂",
+        "老桥"
+      ],
+      "schedule": [
+        {
+          "id": "d9-s1",
+          "time": "上午",
+          "type": "transfer",
+          "text": "乘列车前往佛罗伦萨；具体车次待查询。",
+          "placeId": "florence"
+        },
+        {
+          "id": "d9-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "圣母百花大教堂周边步行，默认外观游览；登顶另行预约。",
+          "placeId": "fduomo"
+        },
+        {
+          "id": "d9-s3",
+          "time": "傍晚",
+          "type": "walk",
+          "text": "走到老桥看河岸，入住佛罗伦萨；酒店待补充。",
+          "placeId": "ponte"
+        }
+      ]
+    },
+    {
+      "id": "day-10",
+      "day": 10,
+      "date": "2026-10-09",
+      "title": "佛罗伦萨 · 艺术与日落",
+      "locations": [
+        "佛罗伦萨",
+        "乌菲齐美术馆",
+        "老桥",
+        "米开朗琪罗广场"
+      ],
+      "schedule": [
+        {
+          "id": "d10-s1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "乌菲齐美术馆半日，实际入馆时间待预约。",
+          "placeId": "uffizi",
+          "ticketIds": [
+            "ticket-uffizi"
+          ]
+        },
+        {
+          "id": "d10-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "老桥与河对岸街区慢行，给午餐留足时间。",
+          "placeId": "ponte"
+        },
+        {
+          "id": "d10-s3",
+          "time": "傍晚",
+          "type": "walk",
+          "text": "体力和天气允许时前往米开朗琪罗广场看城市全景；继续住佛罗伦萨。",
+          "placeId": "piazzale"
+        }
+      ]
+    },
+    {
+      "id": "day-11",
+      "day": 11,
+      "date": "2026-10-10",
+      "title": "佛罗伦萨 → 罗马 · 古城初见",
+      "locations": [
+        "佛罗伦萨",
+        "罗马",
+        "万神殿",
+        "特雷维喷泉"
+      ],
+      "schedule": [
+        {
+          "id": "d11-s1",
+          "time": "上午",
+          "type": "transfer",
+          "text": "乘列车前往罗马；具体车次待查询。",
+          "placeId": "rome"
+        },
+        {
+          "id": "d11-s2",
+          "time": "下午",
+          "type": "walk",
+          "text": "酒店寄存后逛万神殿周边；默认外观游览，入内票务另行确认。",
+          "placeId": "pantheon"
+        },
+        {
+          "id": "d11-s3",
+          "time": "傍晚",
+          "type": "walk",
+          "text": "步行至特雷维喷泉周边，入住罗马；酒店待补充。",
+          "placeId": "trevi"
+        }
+      ]
+    },
+    {
+      "id": "day-12",
+      "day": 12,
+      "date": "2026-10-11",
+      "title": "罗马 · 古罗马的一天",
+      "locations": [
+        "罗马",
+        "斗兽场",
+        "古罗马广场"
+      ],
+      "schedule": [
+        {
+          "id": "d12-s1",
+          "time": "上午",
+          "type": "attraction",
+          "text": "按预约时段参观斗兽场；门票尚未预订。",
+          "placeId": "colosseum",
+          "ticketIds": [
+            "ticket-colosseum"
+          ]
+        },
+        {
+          "id": "d12-s2",
+          "time": "下午",
+          "type": "attraction",
+          "text": "古罗马广场周边探索，按体力安排参观范围。",
+          "placeId": "forum"
+        },
+        {
+          "id": "d12-s3",
+          "time": "晚上",
+          "type": "rest",
+          "text": "继续住罗马，整理返程物品，确认实际航班。",
+          "placeId": "rome"
+        }
+      ]
+    },
+    {
+      "id": "day-13",
+      "day": 13,
+      "date": "2026-10-12",
+      "title": "罗马 · 告别与返程",
+      "locations": [
+        "罗马",
+        "罗马菲乌米奇诺机场"
+      ],
+      "schedule": [
+        {
+          "id": "d13-s1",
+          "time": "07:30",
+          "type": "check-out",
+          "placeId": "rome",
+          "text": "早餐后退房，清点行李与随身物品。"
+        },
+        {
+          "id": "d13-s2",
+          "time": "09:00",
+          "type": "transfer",
+          "placeId": "fco",
+          "text": "抵达罗马菲乌米奇诺机场，办理值机与行李托运。"
+        },
+        {
+          "id": "d13-s3",
+          "time": "12:00",
+          "type": "flight",
+          "placeId": "fco",
+          "text": "搭乘 SQ365 前往新加坡，次日 08:00 转乘 SQ856，10 月 13 日 12:00 抵达深圳。"
+        }
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "zrh",
+      "name": "苏黎世机场",
+      "nameZh": "苏黎世机场",
+      "latitude": 47.4581,
+      "longitude": 8.5555,
+      "countryCode": "CH"
+    },
+    {
+      "id": "zurich",
+      "name": "苏黎世",
+      "nameZh": "苏黎世",
+      "latitude": 47.3769,
+      "longitude": 8.5417,
+      "countryCode": "CH"
+    },
+    {
+      "id": "lucerne",
+      "name": "卢塞恩",
+      "nameZh": "卢塞恩",
+      "latitude": 47.0502,
+      "longitude": 8.3093,
+      "countryCode": "CH"
+    },
+    {
+      "id": "chapel",
+      "name": "卡佩尔廊桥",
+      "nameZh": "卡佩尔廊桥",
+      "latitude": 47.0518,
+      "longitude": 8.3073,
+      "countryCode": "CH"
+    },
+    {
+      "id": "lake",
+      "name": "卢塞恩湖畔",
+      "nameZh": "卢塞恩湖畔",
+      "latitude": 47.0479,
+      "longitude": 8.3167,
+      "countryCode": "CH"
+    },
+    {
+      "id": "interlaken",
+      "name": "因特拉肯",
+      "nameZh": "因特拉肯",
+      "latitude": 46.6863,
+      "longitude": 7.8632,
+      "countryCode": "CH"
+    },
+    {
+      "id": "lauterbrunnen",
+      "name": "劳特布伦嫩",
+      "nameZh": "劳特布伦嫩",
+      "latitude": 46.5935,
+      "longitude": 7.9091,
+      "countryCode": "CH"
+    },
+    {
+      "id": "grindelwald",
+      "name": "格林德瓦",
+      "nameZh": "格林德瓦",
+      "latitude": 46.6242,
+      "longitude": 8.0414,
+      "countryCode": "CH"
+    },
+    {
+      "id": "milan",
+      "name": "米兰",
+      "nameZh": "米兰",
+      "latitude": 45.4642,
+      "longitude": 9.19,
+      "countryCode": "IT"
+    },
+    {
+      "id": "duomo",
+      "name": "米兰大教堂",
+      "nameZh": "米兰大教堂",
+      "latitude": 45.4641,
+      "longitude": 9.1919,
+      "countryCode": "IT"
+    },
+    {
+      "id": "brera",
+      "name": "布雷拉街区",
+      "nameZh": "布雷拉街区",
+      "latitude": 45.4719,
+      "longitude": 9.1875,
+      "countryCode": "IT"
+    },
+    {
+      "id": "florence",
+      "name": "佛罗伦萨",
+      "nameZh": "佛罗伦萨",
+      "latitude": 43.7696,
+      "longitude": 11.2558,
+      "countryCode": "IT"
+    },
+    {
+      "id": "fduomo",
+      "name": "圣母百花大教堂",
+      "nameZh": "圣母百花大教堂",
+      "latitude": 43.7731,
+      "longitude": 11.256,
+      "countryCode": "IT"
+    },
+    {
+      "id": "ponte",
+      "name": "老桥",
+      "nameZh": "老桥",
+      "latitude": 43.768,
+      "longitude": 11.2531,
+      "countryCode": "IT"
+    },
+    {
+      "id": "uffizi",
+      "name": "乌菲齐美术馆",
+      "nameZh": "乌菲齐美术馆",
+      "latitude": 43.7678,
+      "longitude": 11.2553,
+      "countryCode": "IT"
+    },
+    {
+      "id": "piazzale",
+      "name": "米开朗琪罗广场",
+      "nameZh": "米开朗琪罗广场",
+      "latitude": 43.7629,
+      "longitude": 11.2651,
+      "countryCode": "IT"
+    },
+    {
+      "id": "rome",
+      "name": "罗马",
+      "nameZh": "罗马",
+      "latitude": 41.9028,
+      "longitude": 12.4964,
+      "countryCode": "IT"
+    },
+    {
+      "id": "colosseum",
+      "name": "斗兽场",
+      "nameZh": "斗兽场",
+      "latitude": 41.8902,
+      "longitude": 12.4922,
+      "countryCode": "IT"
+    },
+    {
+      "id": "forum",
+      "name": "古罗马广场",
+      "nameZh": "古罗马广场",
+      "latitude": 41.8925,
+      "longitude": 12.4853,
+      "countryCode": "IT"
+    },
+    {
+      "id": "pantheon",
+      "name": "万神殿",
+      "nameZh": "万神殿",
+      "latitude": 41.8986,
+      "longitude": 12.4769,
+      "countryCode": "IT"
+    },
+    {
+      "id": "trevi",
+      "name": "特雷维喷泉",
+      "nameZh": "特雷维喷泉",
+      "latitude": 41.9009,
+      "longitude": 12.4833,
+      "countryCode": "IT"
+    },
+    {
+      "id": "fco",
+      "name": "罗马菲乌米奇诺机场",
+      "nameZh": "罗马菲乌米奇诺机场",
+      "latitude": 41.8003,
+      "longitude": 12.2389,
+      "countryCode": "IT"
+    }
+  ],
+  "restaurants": [],
+  "bookingsAndTickets": [],
+  "ticketPlanning": {
+    "statusStorage": "local",
+    "statusStorageNote": "门票状态默认只保存在当前浏览器。",
+    "items": [
+      {
+        "id": "ticket-duomo",
+        "day": 8,
+        "name": "米兰大教堂",
+        "requirement": "10月7日上午参观 · 票种与时段待预约",
+        "status": "pending",
+        "officialUrl": "https://www.duomomilano.it/en/",
+        "document": {
+          "url": "https://ticket.duomomilano.it/",
+          "type": "text/html",
+          "label": "官方购票入口"
+        },
+        "guidance": "先选择参观范围，再选择日期与可用时段；如需登顶，请核对所选票种是否包含屋顶及上下方式。票价与余票以官方页面为准。"
+      },
+      {
+        "id": "ticket-uffizi",
+        "day": 10,
+        "name": "乌菲齐美术馆",
+        "requirement": "10月9日上午参观 · 入场时段待预约",
+        "status": "pending",
+        "officialUrl": "https://www.uffizi.it/en/tickets",
+        "document": {
+          "url": "https://tickets.uffizi.it/",
+          "type": "text/html",
+          "label": "官方购票入口"
+        },
+        "guidance": "选择 Uffizi 门票及参观日期，再选择可用入场时段。票价与余票以官方购票页面为准。"
+      },
+      {
+        "id": "ticket-colosseum",
+        "day": 12,
+        "name": "斗兽场",
+        "requirement": "10月11日上午参观 · 入场时段待预约",
+        "status": "pending",
+        "officialUrl": "https://colosseo.it/en/opening-times-and-tickets/",
+        "document": {
+          "url": "https://ticketing.colosseo.it/",
+          "type": "text/html",
+          "label": "官方购票入口"
+        },
+        "guidance": "选择斗兽场门票及入场时段，核对是否包含古罗马广场与帕拉蒂尼山；竞技场、地下层等区域以所选票种为准。票价与余票以官方页面为准。"
+      }
+    ]
+  },
+  "preTrip": {
+    "packingItems": [],
+    "preparationsExplicitlyMentioned": [],
+    "missingNote": "暂无已提供待办，可自行添加。"
+  },
+  "mapLinks": {
+    "providedGoogleMapsLinks": [],
+    "note": "",
+    "cityLevelNavigationDisabled": false,
+    "navigationPolicy": {
+      "noNavigationTypes": [
+        "flight",
+        "note",
+        "rest"
+      ],
+      "selfNavigationTypes": [
+        "drive",
+        "return",
+        "transfer",
+        "check-in",
+        "check-out",
+        "restaurant",
+        "attraction",
+        "walk",
+        "hike"
+      ]
+    },
+    "navigationPlaces": []
+  },
+  "issuesAndUncertainties": [
+    "交通资料为用户授权填入的虚构展示数据，未核验班次或租车报价，不能作为实际预订凭据。",
+    "酒店、门票及跨城列车仍待确认。"
+  ],
+  "map": {
+    "schemaVersion": "1.0-lite",
+    "mapMode": "template-auto",
+    "templateId": "auto",
+    "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+    "places": [
+      {
+        "id": "zrh",
+        "name": "苏黎世机场",
+        "nameZh": "苏黎世机场",
+        "lat": 47.4581,
+        "lng": 8.5555,
+        "latitude": 47.4581,
+        "longitude": 8.5555,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 47.4581,
+          "lng": 8.5555
+        }
+      },
+      {
+        "id": "zurich",
+        "name": "苏黎世",
+        "nameZh": "苏黎世",
+        "lat": 47.3769,
+        "lng": 8.5417,
+        "latitude": 47.3769,
+        "longitude": 8.5417,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 47.3769,
+          "lng": 8.5417
+        }
+      },
+      {
+        "id": "lucerne",
+        "name": "卢塞恩",
+        "nameZh": "卢塞恩",
+        "lat": 47.0502,
+        "lng": 8.3093,
+        "latitude": 47.0502,
+        "longitude": 8.3093,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 47.0502,
+          "lng": 8.3093
+        }
+      },
+      {
+        "id": "chapel",
+        "name": "卡佩尔廊桥",
+        "nameZh": "卡佩尔廊桥",
+        "lat": 47.0518,
+        "lng": 8.3073,
+        "latitude": 47.0518,
+        "longitude": 8.3073,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 47.0518,
+          "lng": 8.3073
+        }
+      },
+      {
+        "id": "lake",
+        "name": "卢塞恩湖畔",
+        "nameZh": "卢塞恩湖畔",
+        "lat": 47.0479,
+        "lng": 8.3167,
+        "latitude": 47.0479,
+        "longitude": 8.3167,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 47.0479,
+          "lng": 8.3167
+        }
+      },
+      {
+        "id": "interlaken",
+        "name": "因特拉肯",
+        "nameZh": "因特拉肯",
+        "lat": 46.6863,
+        "lng": 7.8632,
+        "latitude": 46.6863,
+        "longitude": 7.8632,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 46.6863,
+          "lng": 7.8632
+        }
+      },
+      {
+        "id": "lauterbrunnen",
+        "name": "劳特布伦嫩",
+        "nameZh": "劳特布伦嫩",
+        "lat": 46.5935,
+        "lng": 7.9091,
+        "latitude": 46.5935,
+        "longitude": 7.9091,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 46.5935,
+          "lng": 7.9091
+        }
+      },
+      {
+        "id": "grindelwald",
+        "name": "格林德瓦",
+        "nameZh": "格林德瓦",
+        "lat": 46.6242,
+        "lng": 8.0414,
+        "latitude": 46.6242,
+        "longitude": 8.0414,
+        "countryCode": "CH",
+        "mapRegionId": "CH",
+        "geo": {
+          "lat": 46.6242,
+          "lng": 8.0414
+        }
+      },
+      {
+        "id": "milan",
+        "name": "米兰",
+        "nameZh": "米兰",
+        "lat": 45.4642,
+        "lng": 9.19,
+        "latitude": 45.4642,
+        "longitude": 9.19,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 45.4642,
+          "lng": 9.19
+        }
+      },
+      {
+        "id": "duomo",
+        "name": "米兰大教堂",
+        "nameZh": "米兰大教堂",
+        "lat": 45.4641,
+        "lng": 9.1919,
+        "latitude": 45.4641,
+        "longitude": 9.1919,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 45.4641,
+          "lng": 9.1919
+        }
+      },
+      {
+        "id": "brera",
+        "name": "布雷拉街区",
+        "nameZh": "布雷拉街区",
+        "lat": 45.4719,
+        "lng": 9.1875,
+        "latitude": 45.4719,
+        "longitude": 9.1875,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 45.4719,
+          "lng": 9.1875
+        }
+      },
+      {
+        "id": "florence",
+        "name": "佛罗伦萨",
+        "nameZh": "佛罗伦萨",
+        "lat": 43.7696,
+        "lng": 11.2558,
+        "latitude": 43.7696,
+        "longitude": 11.2558,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 43.7696,
+          "lng": 11.2558
+        }
+      },
+      {
+        "id": "fduomo",
+        "name": "圣母百花大教堂",
+        "nameZh": "圣母百花大教堂",
+        "lat": 43.7731,
+        "lng": 11.256,
+        "latitude": 43.7731,
+        "longitude": 11.256,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 43.7731,
+          "lng": 11.256
+        }
+      },
+      {
+        "id": "ponte",
+        "name": "老桥",
+        "nameZh": "老桥",
+        "lat": 43.768,
+        "lng": 11.2531,
+        "latitude": 43.768,
+        "longitude": 11.2531,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 43.768,
+          "lng": 11.2531
+        }
+      },
+      {
+        "id": "uffizi",
+        "name": "乌菲齐美术馆",
+        "nameZh": "乌菲齐美术馆",
+        "lat": 43.7678,
+        "lng": 11.2553,
+        "latitude": 43.7678,
+        "longitude": 11.2553,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 43.7678,
+          "lng": 11.2553
+        }
+      },
+      {
+        "id": "piazzale",
+        "name": "米开朗琪罗广场",
+        "nameZh": "米开朗琪罗广场",
+        "lat": 43.7629,
+        "lng": 11.2651,
+        "latitude": 43.7629,
+        "longitude": 11.2651,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 43.7629,
+          "lng": 11.2651
+        }
+      },
+      {
+        "id": "rome",
+        "name": "罗马",
+        "nameZh": "罗马",
+        "lat": 41.9028,
+        "lng": 12.4964,
+        "latitude": 41.9028,
+        "longitude": 12.4964,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 41.9028,
+          "lng": 12.4964
+        }
+      },
+      {
+        "id": "colosseum",
+        "name": "斗兽场",
+        "nameZh": "斗兽场",
+        "lat": 41.8902,
+        "lng": 12.4922,
+        "latitude": 41.8902,
+        "longitude": 12.4922,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 41.8902,
+          "lng": 12.4922
+        }
+      },
+      {
+        "id": "forum",
+        "name": "古罗马广场",
+        "nameZh": "古罗马广场",
+        "lat": 41.8925,
+        "lng": 12.4853,
+        "latitude": 41.8925,
+        "longitude": 12.4853,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 41.8925,
+          "lng": 12.4853
+        }
+      },
+      {
+        "id": "pantheon",
+        "name": "万神殿",
+        "nameZh": "万神殿",
+        "lat": 41.8986,
+        "lng": 12.4769,
+        "latitude": 41.8986,
+        "longitude": 12.4769,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 41.8986,
+          "lng": 12.4769
+        }
+      },
+      {
+        "id": "trevi",
+        "name": "特雷维喷泉",
+        "nameZh": "特雷维喷泉",
+        "lat": 41.9009,
+        "lng": 12.4833,
+        "latitude": 41.9009,
+        "longitude": 12.4833,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 41.9009,
+          "lng": 12.4833
+        }
+      },
+      {
+        "id": "fco",
+        "name": "罗马菲乌米奇诺机场",
+        "nameZh": "罗马菲乌米奇诺机场",
+        "lat": 41.8003,
+        "lng": 12.2389,
+        "latitude": 41.8003,
+        "longitude": 12.2389,
+        "countryCode": "IT",
+        "mapRegionId": "IT",
+        "geo": {
+          "lat": 41.8003,
+          "lng": 12.2389
+        }
+      }
+    ],
+    "routes": [
+      {
+        "id": "route-1",
+        "day": 1,
+        "placeIds": [
+          "zrh",
+          "zurich"
+        ]
+      },
+      {
+        "id": "route-2",
+        "day": 2,
+        "placeIds": [
+          "zurich",
+          "lucerne",
+          "chapel",
+          "lake"
+        ]
+      },
+      {
+        "id": "route-3",
+        "day": 3,
+        "placeIds": [
+          "lucerne",
+          "lake",
+          "chapel"
+        ]
+      },
+      {
+        "id": "route-4",
+        "day": 4,
+        "placeIds": [
+          "lucerne",
+          "interlaken"
+        ]
+      },
+      {
+        "id": "route-5",
+        "day": 5,
+        "placeIds": [
+          "interlaken",
+          "lauterbrunnen",
+          "interlaken"
+        ]
+      },
+      {
+        "id": "route-6",
+        "day": 6,
+        "placeIds": [
+          "interlaken",
+          "grindelwald",
+          "interlaken"
+        ]
+      },
+      {
+        "id": "route-7",
+        "day": 7,
+        "placeIds": [
+          "interlaken",
+          "zrh",
+          "milan"
+        ]
+      },
+      {
+        "id": "route-8",
+        "day": 8,
+        "placeIds": [
+          "milan",
+          "duomo",
+          "brera"
+        ]
+      },
+      {
+        "id": "route-9",
+        "day": 9,
+        "placeIds": [
+          "milan",
+          "florence",
+          "fduomo",
+          "ponte"
+        ]
+      },
+      {
+        "id": "route-10",
+        "day": 10,
+        "placeIds": [
+          "florence",
+          "uffizi",
+          "ponte",
+          "piazzale"
+        ]
+      },
+      {
+        "id": "route-11",
+        "day": 11,
+        "placeIds": [
+          "florence",
+          "rome",
+          "pantheon",
+          "trevi"
+        ]
+      },
+      {
+        "id": "route-12",
+        "day": 12,
+        "placeIds": [
+          "rome",
+          "colosseum",
+          "forum"
+        ]
+      },
+      {
+        "id": "route-13",
+        "day": 13,
+        "placeIds": [
+          "rome",
+          "fco"
+        ]
+      }
+    ],
+    "dailyRoutes": [
+      {
+        "id": "daily-1",
+        "day": 1,
+        "placeIds": [
+          "zrh",
+          "zurich"
+        ],
+        "scheduleItems": [
+          [
+            "d1-s2"
+          ]
+        ]
+      },
+      {
+        "id": "daily-2",
+        "day": 2,
+        "placeIds": [
+          "zurich",
+          "lucerne",
+          "chapel",
+          "lake"
+        ],
+        "scheduleItems": [
+          [
+            "d2-s1"
+          ],
+          [
+            "d2-s2"
+          ],
+          [
+            "d2-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-3",
+        "day": 3,
+        "placeIds": [
+          "lucerne",
+          "lake",
+          "chapel"
+        ],
+        "scheduleItems": [
+          [
+            "d3-s1"
+          ],
+          []
+        ]
+      },
+      {
+        "id": "daily-4",
+        "day": 4,
+        "placeIds": [
+          "lucerne",
+          "interlaken"
+        ],
+        "scheduleItems": [
+          [
+            "d4-s1"
+          ]
+        ]
+      },
+      {
+        "id": "daily-5",
+        "day": 5,
+        "placeIds": [
+          "interlaken",
+          "lauterbrunnen",
+          "interlaken"
+        ],
+        "scheduleItems": [
+          [
+            "d5-s1"
+          ],
+          [
+            "d5-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-6",
+        "day": 6,
+        "placeIds": [
+          "interlaken",
+          "grindelwald",
+          "interlaken"
+        ],
+        "scheduleItems": [
+          [
+            "d6-s1"
+          ],
+          [
+            "d6-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-7",
+        "day": 7,
+        "placeIds": [
+          "interlaken",
+          "zrh",
+          "milan"
+        ],
+        "scheduleItems": [
+          [
+            "d7-s1"
+          ],
+          [
+            "d7-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-8",
+        "day": 8,
+        "placeIds": [
+          "milan",
+          "duomo",
+          "brera"
+        ],
+        "scheduleItems": [
+          [],
+          [
+            "d8-s2"
+          ]
+        ]
+      },
+      {
+        "id": "daily-9",
+        "day": 9,
+        "placeIds": [
+          "milan",
+          "florence",
+          "fduomo",
+          "ponte"
+        ],
+        "scheduleItems": [
+          [
+            "d9-s1"
+          ],
+          [
+            "d9-s2"
+          ],
+          [
+            "d9-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-10",
+        "day": 10,
+        "placeIds": [
+          "florence",
+          "uffizi",
+          "ponte",
+          "piazzale"
+        ],
+        "scheduleItems": [
+          [],
+          [
+            "d10-s2"
+          ],
+          [
+            "d10-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-11",
+        "day": 11,
+        "placeIds": [
+          "florence",
+          "rome",
+          "pantheon",
+          "trevi"
+        ],
+        "scheduleItems": [
+          [
+            "d11-s1"
+          ],
+          [
+            "d11-s2"
+          ],
+          [
+            "d11-s3"
+          ]
+        ]
+      },
+      {
+        "id": "daily-12",
+        "day": 12,
+        "placeIds": [
+          "rome",
+          "colosseum",
+          "forum"
+        ],
+        "scheduleItems": [
+          [],
+          []
+        ]
+      },
+      {
+        "id": "daily-13",
+        "day": 13,
+        "placeIds": [
+          "rome",
+          "fco"
+        ],
+        "scheduleItems": [
+          [
+            "d13-s2"
+          ]
+        ]
+      }
+    ],
+    "region": {
+      "id": "ch-it",
+      "label": "瑞士 × 意大利"
+    },
+    "regions": [
+      {
+        "id": "CH",
+        "name": "瑞士",
+        "countryCode": "CH",
+        "label": "瑞士"
+      },
+      {
+        "id": "IT",
+        "name": "意大利",
+        "countryCode": "IT",
+        "label": "意大利"
+      }
+    ]
+  },
+  "routeMap": {
+    "defaultRegionId": "ch",
+    "regions": [
+      {
+        "id": "ch",
+        "label": "瑞士",
+        "countryCode": "CH",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "compact-basin",
+        "mapModeReason": "dense-place-cluster",
+        "mapModeMetrics": {
+          "placeCount": 8,
+          "geoPlaceCount": 8,
+          "widthKm": 52.42,
+          "heightKm": 95.97,
+          "spanKm": 107.9,
+          "averageNearestKm": 6.44,
+          "components": 1,
+          "largestLegKm": 100.57,
+          "jumpRatio": 9.23
+        },
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-07-compact-basin.webp",
+        "title": "瑞士 · 旅行路线",
+        "ariaLabel": "瑞士模板化旅行路线示意图，共7天",
+        "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+        "heading": {
+          "text": "瑞士",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 1,
+            "color": "#397dc1",
+            "placeIds": [
+              "zrh",
+              "zurich"
+            ],
+            "paths": [
+              "M868.33 234.32 C874.3 269.0 870.4 302.5 856.9 332.92"
+            ],
+            "overviewPaths": [
+              "M868.33 234.32 C874.3 269.0 870.4 302.5 856.9 332.92"
+            ]
+          },
+          {
+            "day": 2,
+            "color": "#e77e22",
+            "placeIds": [
+              "zurich",
+              "lucerne",
+              "chapel",
+              "lake"
+            ],
+            "paths": [
+              "M856.9 332.92 C805.1 403.7 776.6 483.0 773.09 565.88 C744.1 546.5 722.6 520.9 709.96 490.4 C744.0 494.4 776.4 488.8 805.27 474.04"
+            ],
+            "overviewPaths": [
+              "M856.9 332.92 C805.1 403.7 776.6 483.0 773.09 565.88 C744.1 546.5 722.6 520.9 709.96 490.4 C744.0 494.4 776.4 488.8 805.27 474.04"
+            ]
+          },
+          {
+            "day": 3,
+            "color": "#618344",
+            "placeIds": [
+              "lucerne",
+              "lake",
+              "chapel"
+            ],
+            "paths": [
+              "M773.09 565.88 C774.8 531.4 785.8 500.2 805.27 474.04 C771.2 470.1 738.8 475.6 709.96 490.4"
+            ],
+            "overviewPaths": [
+              "M773.09 565.88 C774.8 531.4 785.8 500.2 805.27 474.04 C771.2 470.1 738.8 475.6 709.96 490.4"
+            ]
+          },
+          {
+            "day": 4,
+            "color": "#209aaa",
+            "placeIds": [
+              "lucerne",
+              "interlaken"
+            ],
+            "paths": [
+              "M773.09 565.88 C689.6 597.5 621.4 649.3 572.38 718.02"
+            ],
+            "overviewPaths": [
+              "M773.09 565.88 C689.6 597.5 621.4 649.3 572.38 718.02"
+            ]
+          },
+          {
+            "day": 5,
+            "color": "#8865a5",
+            "placeIds": [
+              "interlaken",
+              "lauterbrunnen",
+              "interlaken"
+            ],
+            "paths": [
+              "M572.38 718.02 C585.4 751.0 588.4 785.0 581.29 817.78 C588.2 783.0 585.2 749.1 572.38 718.02"
+            ],
+            "overviewPaths": [
+              "M572.38 718.02 C585.4 751.0 588.4 785.0 581.29 817.78 C588.2 783.0 585.2 749.1 572.38 718.02"
+            ]
+          },
+          {
+            "day": 6,
+            "color": "#df6185",
+            "placeIds": [
+              "interlaken",
+              "grindelwald",
+              "interlaken"
+            ],
+            "paths": [
+              "M572.38 718.02 C599.1 742.2 630.2 757.3 663.98 762.29 C628.4 756.4 597.3 741.3 572.38 718.02"
+            ],
+            "overviewPaths": [
+              "M572.38 718.02 C599.1 742.2 630.2 757.3 663.98 762.29 C628.4 756.4 597.3 741.3 572.38 718.02"
+            ]
+          },
+          {
+            "day": 7,
+            "color": "#397dc1",
+            "placeIds": [
+              "interlaken",
+              "zrh"
+            ],
+            "paths": [
+              "M572.38 718.02 C647.4 537.9 748.0 373.4 868.33 234.32"
+            ],
+            "overviewPaths": [
+              "M572.38 718.02 C647.4 537.9 748.0 373.4 868.33 234.32"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "zrh",
+            "x": 868.33,
+            "y": 234.32,
+            "color": "#397dc1",
+            "tx": 900.33,
+            "ty": 202.32,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "苏黎世机场"
+            ],
+            "query": "苏黎世机场 瑞士",
+            "geo": {
+              "lat": 47.4581,
+              "lng": 8.5555
+            },
+            "days": [
+              1,
+              7
+            ]
+          },
+          {
+            "id": "zurich",
+            "x": 856.9,
+            "y": 332.92,
+            "color": "#397dc1",
+            "tx": 824.9,
+            "ty": 300.92,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "苏黎世"
+            ],
+            "query": "苏黎世 瑞士",
+            "geo": {
+              "lat": 47.3769,
+              "lng": 8.5417
+            },
+            "days": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": "lucerne",
+            "x": 773.09,
+            "y": 565.88,
+            "color": "#e77e22",
+            "tx": 851.09,
+            "ty": 503.88,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "卢塞恩"
+            ],
+            "query": "卢塞恩 瑞士",
+            "geo": {
+              "lat": 47.0502,
+              "lng": 8.3093
+            },
+            "days": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": "chapel",
+            "x": 709.96,
+            "y": 490.4,
+            "color": "#e77e22",
+            "tx": 631.96,
+            "ty": 428.4,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "卡佩尔廊桥"
+            ],
+            "query": "卡佩尔廊桥 瑞士",
+            "geo": {
+              "lat": 47.0518,
+              "lng": 8.3073
+            },
+            "days": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "lake",
+            "x": 805.27,
+            "y": 474.04,
+            "color": "#e77e22",
+            "tx": 943.27,
+            "ty": 386.04,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "卢塞恩湖畔"
+            ],
+            "query": "卢塞恩湖畔 瑞士",
+            "geo": {
+              "lat": 47.0479,
+              "lng": 8.3167
+            },
+            "days": [
+              2,
+              3
+            ]
+          },
+          {
+            "id": "interlaken",
+            "x": 572.38,
+            "y": 718.02,
+            "color": "#209aaa",
+            "tx": 710.38,
+            "ty": 820.02,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "因特拉肯"
+            ],
+            "query": "因特拉肯 瑞士",
+            "geo": {
+              "lat": 46.6863,
+              "lng": 7.8632
+            },
+            "days": [
+              4,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "id": "lauterbrunnen",
+            "x": 581.29,
+            "y": 817.78,
+            "color": "#8865a5",
+            "tx": 549.29,
+            "ty": 785.78,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "劳特布伦嫩"
+            ],
+            "query": "劳特布伦嫩 瑞士",
+            "geo": {
+              "lat": 46.5935,
+              "lng": 7.9091
+            },
+            "days": [
+              5
+            ]
+          },
+          {
+            "id": "grindelwald",
+            "x": 663.98,
+            "y": 762.29,
+            "color": "#df6185",
+            "tx": 741.98,
+            "ty": 700.29,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "格林德瓦"
+            ],
+            "query": "格林德瓦 瑞士",
+            "geo": {
+              "lat": 46.6242,
+              "lng": 8.0414
+            },
+            "days": [
+              6
+            ]
+          }
+        ],
+        "overviewPlaceIds": [
+          "zrh",
+          "zurich",
+          "lucerne",
+          "chapel",
+          "lake",
+          "interlaken",
+          "lauterbrunnen",
+          "grindelwald"
+        ],
+        "dailyLayouts": {
+          "1": {
+            "places": [
+              "zrh",
+              "zurich"
+            ],
+            "labels": {
+              "zrh": {
+                "x": 900.33,
+                "y": 202.32,
+                "anchor": "start"
+              },
+              "zurich": {
+                "x": 824.9,
+                "y": 300.92,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d1-s2"
+                ],
+                "x": 862.62,
+                "y": 283.62
+              }
+            ]
+          },
+          "2": {
+            "places": [
+              "zurich",
+              "lucerne",
+              "chapel",
+              "lake"
+            ],
+            "labels": {
+              "zurich": {
+                "x": 824.9,
+                "y": 300.92,
+                "anchor": "end"
+              },
+              "lucerne": {
+                "x": 851.09,
+                "y": 503.88,
+                "anchor": "start"
+              },
+              "chapel": {
+                "x": 631.96,
+                "y": 428.4,
+                "anchor": "end"
+              },
+              "lake": {
+                "x": 943.27,
+                "y": 386.04,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d2-s1"
+                ],
+                "x": 815,
+                "y": 449.4
+              },
+              {
+                "items": [
+                  "d2-s2"
+                ],
+                "x": 741.53,
+                "y": 528.14
+              },
+              {
+                "items": [
+                  "d2-s3"
+                ],
+                "x": 757.62,
+                "y": 482.22
+              }
+            ]
+          },
+          "3": {
+            "places": [
+              "lucerne",
+              "lake",
+              "chapel"
+            ],
+            "labels": {
+              "lucerne": {
+                "x": 851.09,
+                "y": 503.88,
+                "anchor": "start"
+              },
+              "lake": {
+                "x": 943.27,
+                "y": 386.04,
+                "anchor": "start"
+              },
+              "chapel": {
+                "x": 631.96,
+                "y": 428.4,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d3-s1"
+                ],
+                "x": 789.18,
+                "y": 519.96
+              },
+              {
+                "items": [],
+                "x": 757.62,
+                "y": 482.22
+              }
+            ]
+          },
+          "4": {
+            "places": [
+              "lucerne",
+              "interlaken"
+            ],
+            "labels": {
+              "lucerne": {
+                "x": 851.09,
+                "y": 503.88,
+                "anchor": "start"
+              },
+              "interlaken": {
+                "x": 710.38,
+                "y": 820.02,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d4-s1"
+                ],
+                "x": 672.74,
+                "y": 641.95
+              }
+            ]
+          },
+          "5": {
+            "places": [
+              "interlaken",
+              "lauterbrunnen"
+            ],
+            "labels": {
+              "interlaken": {
+                "x": 710.38,
+                "y": 820.02,
+                "anchor": "start"
+              },
+              "lauterbrunnen": {
+                "x": 549.29,
+                "y": 785.78,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d5-s1"
+                ],
+                "x": 576.84,
+                "y": 767.9
+              },
+              {
+                "items": [
+                  "d5-s3"
+                ],
+                "x": 576.84,
+                "y": 767.9
+              }
+            ]
+          },
+          "6": {
+            "places": [
+              "interlaken",
+              "grindelwald"
+            ],
+            "labels": {
+              "interlaken": {
+                "x": 710.38,
+                "y": 820.02,
+                "anchor": "start"
+              },
+              "grindelwald": {
+                "x": 741.98,
+                "y": 700.29,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d6-s1"
+                ],
+                "x": 618.18,
+                "y": 740.15
+              },
+              {
+                "items": [
+                  "d6-s3"
+                ],
+                "x": 618.18,
+                "y": 740.15
+              }
+            ]
+          },
+          "7": {
+            "places": [
+              "interlaken",
+              "zrh"
+            ],
+            "labels": {
+              "interlaken": {
+                "x": 710.38,
+                "y": 820.02,
+                "anchor": "start"
+              },
+              "zrh": {
+                "x": 900.33,
+                "y": 202.32,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d7-s1"
+                ],
+                "x": 720.36,
+                "y": 476.17
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "it",
+        "label": "意大利",
+        "countryCode": "IT",
+        "scope": "template-schematic",
+        "mapMode": "frozen-template",
+        "templateId": "compact-basin",
+        "mapModeReason": "dense-place-cluster",
+        "mapModeMetrics": {
+          "placeCount": 14,
+          "geoPlaceCount": 14,
+          "widthKm": 267.2,
+          "heightKm": 407.55,
+          "spanKm": 478.69,
+          "averageNearestKm": 2.08,
+          "components": 1,
+          "largestLegKm": 249.46,
+          "jumpRatio": 249.46
+        },
+        "days": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "canvas": {
+          "width": 1448,
+          "height": 1086
+        },
+        "projection": {
+          "type": "relative-schematic",
+          "bounds": null
+        },
+        "baseImage": "assets/maps/templates/template-07-compact-basin.webp",
+        "title": "意大利 · 旅行路线",
+        "ariaLabel": "意大利模板化旅行路线示意图，共7天",
+        "disclaimer": "本图仅表达地点的相对方位与路线顺序，不代表真实比例或精确地理边界。",
+        "heading": {
+          "text": "意大利",
+          "x": 33,
+          "y": 105,
+          "size": 40
+        },
+        "legend": {
+          "x": 35,
+          "y": 168,
+          "gap": 43
+        },
+        "annotations": [],
+        "routes": [
+          {
+            "day": 7,
+            "color": "#397dc1",
+            "placeIds": [
+              "milan"
+            ],
+            "paths": [],
+            "overviewPaths": []
+          },
+          {
+            "day": 8,
+            "color": "#e77e22",
+            "placeIds": [
+              "milan",
+              "duomo",
+              "brera"
+            ],
+            "paths": [
+              "M465.85 256.51 C499.9 271.9 535.3 276.8 570.13 271 C548.3 247.1 534.7 219.2 530.07 189"
+            ],
+            "overviewPaths": [
+              "M465.85 256.51 C494.4 240.0 516.3 217.0 530.07 189"
+            ]
+          },
+          {
+            "day": 9,
+            "color": "#618344",
+            "placeIds": [
+              "milan",
+              "florence",
+              "fduomo",
+              "ponte"
+            ],
+            "paths": [
+              "M465.85 256.51 C594.1 342.4 701.1 449.6 780.54 571.61 C803.5 518.4 810.3 463.2 800.43 409.29 C776.2 470.7 737.4 520.6 686.08 556.16"
+            ],
+            "overviewPaths": [
+              "M465.85 256.51 C594.1 342.4 701.1 449.6 780.54 571.61 C750.0 556.9 717.9 551.7 686.08 556.16"
+            ]
+          },
+          {
+            "day": 10,
+            "color": "#209aaa",
+            "placeIds": [
+              "florence",
+              "uffizi",
+              "ponte",
+              "piazzale"
+            ],
+            "paths": [
+              "M780.54 571.61 C777.1 537.6 764.8 507.2 744.19 482.17 C731.8 513.1 712.1 538.3 686.08 556.16 C743.5 551.2 795.0 531.0 837.48 496.9"
+            ],
+            "overviewPaths": [
+              "M780.54 571.61 C750.0 556.9 717.9 551.7 686.08 556.16 C731.6 520.9 783.1 500.7 837.48 496.9"
+            ]
+          },
+          {
+            "day": 11,
+            "color": "#8865a5",
+            "placeIds": [
+              "florence",
+              "rome",
+              "pantheon",
+              "trevi"
+            ],
+            "paths": [
+              "M780.54 571.61 C849.7 598.3 906.2 641.5 946.6 698.81 C901.7 745.5 873.1 800.7 862.31 861 C899.5 819.2 945.1 790.8 996.28 777.53"
+            ],
+            "overviewPaths": [
+              "M780.54 571.61 C849.7 598.3 906.2 641.5 946.6 698.81 C955.6 730.5 972.5 757.3 996.28 777.53"
+            ]
+          },
+          {
+            "day": 12,
+            "color": "#df6185",
+            "placeIds": [
+              "rome",
+              "colosseum",
+              "forum"
+            ],
+            "paths": [
+              "M946.6 698.81 C933.5 754.9 936.6 810.0 955.7 861 C930.0 837.8 912.6 809.5 904.59 777.74"
+            ],
+            "overviewPaths": [
+              "M946.6 698.81 C933.5 754.9 936.6 810.0 955.7 861 C930.0 837.8 912.6 809.5 904.59 777.74"
+            ]
+          },
+          {
+            "day": 13,
+            "color": "#397dc1",
+            "placeIds": [
+              "rome",
+              "fco"
+            ],
+            "paths": [
+              "M946.6 698.81 C908.2 742.9 860.9 773.1 807.49 787.59"
+            ],
+            "overviewPaths": [
+              "M946.6 698.81 C908.2 742.9 860.9 773.1 807.49 787.59"
+            ]
+          }
+        ],
+        "places": [
+          {
+            "id": "milan",
+            "x": 465.85,
+            "y": 256.51,
+            "color": "#397dc1",
+            "tx": 543.85,
+            "ty": 332.51,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "米兰"
+            ],
+            "query": "米兰 意大利",
+            "geo": {
+              "lat": 45.4642,
+              "lng": 9.19
+            },
+            "days": [
+              7,
+              8,
+              9
+            ]
+          },
+          {
+            "id": "duomo",
+            "x": 570.13,
+            "y": 271,
+            "color": "#e77e22",
+            "tx": 538.13,
+            "ty": 321,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "米兰大教堂"
+            ],
+            "query": "米兰大教堂 意大利",
+            "geo": {
+              "lat": 45.4641,
+              "lng": 9.1919
+            },
+            "days": [
+              8
+            ]
+          },
+          {
+            "id": "brera",
+            "x": 530.07,
+            "y": 189,
+            "color": "#e77e22",
+            "tx": 608.07,
+            "ty": 127,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "布雷拉街区"
+            ],
+            "query": "布雷拉街区 意大利",
+            "geo": {
+              "lat": 45.4719,
+              "lng": 9.1875
+            },
+            "days": [
+              8
+            ]
+          },
+          {
+            "id": "florence",
+            "x": 780.54,
+            "y": 571.61,
+            "color": "#618344",
+            "tx": 702.54,
+            "ty": 647.61,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "佛罗伦萨"
+            ],
+            "query": "佛罗伦萨 意大利",
+            "geo": {
+              "lat": 43.7696,
+              "lng": 11.2558
+            },
+            "days": [
+              9,
+              10,
+              11
+            ]
+          },
+          {
+            "id": "fduomo",
+            "x": 800.43,
+            "y": 409.29,
+            "color": "#618344",
+            "tx": 938.43,
+            "ty": 321.29,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "圣母百花大教堂"
+            ],
+            "query": "圣母百花大教堂 意大利",
+            "geo": {
+              "lat": 43.7731,
+              "lng": 11.256
+            },
+            "days": [
+              9
+            ]
+          },
+          {
+            "id": "ponte",
+            "x": 686.08,
+            "y": 556.16,
+            "color": "#618344",
+            "tx": 548.08,
+            "ty": 658.16,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "老桥"
+            ],
+            "query": "老桥 意大利",
+            "geo": {
+              "lat": 43.768,
+              "lng": 11.2531
+            },
+            "days": [
+              9,
+              10
+            ]
+          },
+          {
+            "id": "uffizi",
+            "x": 744.19,
+            "y": 482.17,
+            "color": "#209aaa",
+            "tx": 712.19,
+            "ty": 450.17,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "乌菲齐美术馆"
+            ],
+            "query": "乌菲齐美术馆 意大利",
+            "geo": {
+              "lat": 43.7678,
+              "lng": 11.2553
+            },
+            "days": [
+              10
+            ]
+          },
+          {
+            "id": "piazzale",
+            "x": 837.48,
+            "y": 496.9,
+            "color": "#209aaa",
+            "tx": 915.48,
+            "ty": 434.9,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "米开朗琪罗广场"
+            ],
+            "query": "米开朗琪罗广场 意大利",
+            "geo": {
+              "lat": 43.7629,
+              "lng": 11.2651
+            },
+            "days": [
+              10
+            ]
+          },
+          {
+            "id": "rome",
+            "x": 946.6,
+            "y": 698.81,
+            "color": "#8865a5",
+            "tx": 1024.6,
+            "ty": 636.81,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "罗马"
+            ],
+            "query": "罗马 意大利",
+            "geo": {
+              "lat": 41.9028,
+              "lng": 12.4964
+            },
+            "days": [
+              11,
+              12,
+              13
+            ]
+          },
+          {
+            "id": "colosseum",
+            "x": 955.7,
+            "y": 861,
+            "color": "#df6185",
+            "tx": 877.7,
+            "ty": 937,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "斗兽场"
+            ],
+            "query": "斗兽场 意大利",
+            "geo": {
+              "lat": 41.8902,
+              "lng": 12.4922
+            },
+            "days": [
+              12
+            ]
+          },
+          {
+            "id": "forum",
+            "x": 904.59,
+            "y": 777.74,
+            "color": "#df6185",
+            "tx": 1042.59,
+            "ty": 879.74,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "古罗马广场"
+            ],
+            "query": "古罗马广场 意大利",
+            "geo": {
+              "lat": 41.8925,
+              "lng": 12.4853
+            },
+            "days": [
+              12
+            ]
+          },
+          {
+            "id": "pantheon",
+            "x": 862.31,
+            "y": 861,
+            "color": "#8865a5",
+            "tx": 1000.31,
+            "ty": 963,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "万神殿"
+            ],
+            "query": "万神殿 意大利",
+            "geo": {
+              "lat": 41.8986,
+              "lng": 12.4769
+            },
+            "days": [
+              11
+            ]
+          },
+          {
+            "id": "trevi",
+            "x": 996.28,
+            "y": 777.53,
+            "color": "#8865a5",
+            "tx": 1028.28,
+            "ty": 745.53,
+            "size": 24,
+            "anchor": "start",
+            "lines": [
+              "特雷维喷泉"
+            ],
+            "query": "特雷维喷泉 意大利",
+            "geo": {
+              "lat": 41.9009,
+              "lng": 12.4833
+            },
+            "days": [
+              11
+            ]
+          },
+          {
+            "id": "fco",
+            "x": 807.49,
+            "y": 787.59,
+            "color": "#397dc1",
+            "tx": 775.49,
+            "ty": 755.59,
+            "size": 24,
+            "anchor": "end",
+            "lines": [
+              "罗马菲乌米奇诺机场"
+            ],
+            "query": "罗马菲乌米奇诺机场 意大利",
+            "geo": {
+              "lat": 41.8003,
+              "lng": 12.2389
+            },
+            "days": [
+              13
+            ]
+          }
+        ],
+        "overviewPlaceIds": [
+          "milan",
+          "brera",
+          "florence",
+          "ponte",
+          "piazzale",
+          "rome",
+          "trevi",
+          "colosseum",
+          "forum",
+          "fco"
+        ],
+        "dailyLayouts": {
+          "7": {
+            "places": [
+              "milan"
+            ],
+            "labels": {
+              "milan": {
+                "x": 543.85,
+                "y": 332.51,
+                "anchor": "start"
+              }
+            },
+            "transport": []
+          },
+          "8": {
+            "places": [
+              "milan",
+              "duomo",
+              "brera"
+            ],
+            "labels": {
+              "milan": {
+                "x": 543.85,
+                "y": 332.51,
+                "anchor": "start"
+              },
+              "duomo": {
+                "x": 538.13,
+                "y": 321,
+                "anchor": "end"
+              },
+              "brera": {
+                "x": 608.07,
+                "y": 127,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 517.99,
+                "y": 263.75
+              },
+              {
+                "items": [
+                  "d8-s2"
+                ],
+                "x": 550.1,
+                "y": 230
+              }
+            ]
+          },
+          "9": {
+            "places": [
+              "milan",
+              "florence",
+              "fduomo",
+              "ponte"
+            ],
+            "labels": {
+              "milan": {
+                "x": 543.85,
+                "y": 332.51,
+                "anchor": "start"
+              },
+              "florence": {
+                "x": 702.54,
+                "y": 647.61,
+                "anchor": "end"
+              },
+              "fduomo": {
+                "x": 938.43,
+                "y": 321.29,
+                "anchor": "start"
+              },
+              "ponte": {
+                "x": 548.08,
+                "y": 658.16,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d9-s1"
+                ],
+                "x": 623.19,
+                "y": 414.06
+              },
+              {
+                "items": [
+                  "d9-s2"
+                ],
+                "x": 790.48,
+                "y": 490.45
+              },
+              {
+                "items": [
+                  "d9-s3"
+                ],
+                "x": 743.25,
+                "y": 482.73
+              }
+            ]
+          },
+          "10": {
+            "places": [
+              "florence",
+              "uffizi",
+              "ponte",
+              "piazzale"
+            ],
+            "labels": {
+              "florence": {
+                "x": 702.54,
+                "y": 647.61,
+                "anchor": "end"
+              },
+              "uffizi": {
+                "x": 712.19,
+                "y": 450.17,
+                "anchor": "end"
+              },
+              "ponte": {
+                "x": 548.08,
+                "y": 658.16,
+                "anchor": "end"
+              },
+              "piazzale": {
+                "x": 915.48,
+                "y": 434.9,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 762.37,
+                "y": 526.89
+              },
+              {
+                "items": [
+                  "d10-s2"
+                ],
+                "x": 715.13,
+                "y": 519.16
+              },
+              {
+                "items": [
+                  "d10-s3"
+                ],
+                "x": 761.78,
+                "y": 526.53
+              }
+            ]
+          },
+          "11": {
+            "places": [
+              "florence",
+              "rome",
+              "pantheon",
+              "trevi"
+            ],
+            "labels": {
+              "florence": {
+                "x": 702.54,
+                "y": 647.61,
+                "anchor": "end"
+              },
+              "rome": {
+                "x": 1024.6,
+                "y": 636.81,
+                "anchor": "start"
+              },
+              "pantheon": {
+                "x": 1000.31,
+                "y": 963,
+                "anchor": "start"
+              },
+              "trevi": {
+                "x": 1028.28,
+                "y": 745.53,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d11-s1"
+                ],
+                "x": 863.57,
+                "y": 635.21
+              },
+              {
+                "items": [
+                  "d11-s2"
+                ],
+                "x": 904.45,
+                "y": 779.9
+              },
+              {
+                "items": [
+                  "d11-s3"
+                ],
+                "x": 929.29,
+                "y": 819.26
+              }
+            ]
+          },
+          "12": {
+            "places": [
+              "rome",
+              "colosseum",
+              "forum"
+            ],
+            "labels": {
+              "rome": {
+                "x": 1024.6,
+                "y": 636.81,
+                "anchor": "start"
+              },
+              "colosseum": {
+                "x": 877.7,
+                "y": 937,
+                "anchor": "end"
+              },
+              "forum": {
+                "x": 1042.59,
+                "y": 879.74,
+                "anchor": "start"
+              }
+            },
+            "transport": [
+              {
+                "items": [],
+                "x": 951.15,
+                "y": 779.9
+              },
+              {
+                "items": [],
+                "x": 930.14,
+                "y": 819.37
+              }
+            ]
+          },
+          "13": {
+            "places": [
+              "rome",
+              "fco"
+            ],
+            "labels": {
+              "rome": {
+                "x": 1024.6,
+                "y": 636.81,
+                "anchor": "start"
+              },
+              "fco": {
+                "x": 775.49,
+                "y": 755.59,
+                "anchor": "end"
+              }
+            },
+            "transport": [
+              {
+                "items": [
+                  "d13-s2"
+                ],
+                "x": 877.05,
+                "y": 743.2
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "initialLedger": {
+    "settings": {
+      "baseCurrency": "CNY",
+      "commonCurrencies": [
+        "CHF",
+        "EUR"
+      ],
+      "lastCurrency": "CNY"
+    },
+    "travelers": [
+      {
+        "id": "p1",
+        "name": "小林",
+        "color": "#287D8E"
+      },
+      {
+        "id": "p2",
+        "name": "小陈",
+        "color": "#CF8950"
+      }
+    ],
+    "bills": [
+      {
+        "id": "initial-bill-1",
+        "originalAmountCents": 1680000,
+        "baseAmountCents": 1680000,
+        "currency": "CNY",
+        "category": "交通",
+        "note": "往返机票 · 两人",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p1",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-2",
+        "originalAmountCents": 493000,
+        "baseAmountCents": 493000,
+        "currency": "CNY",
+        "category": "交通",
+        "note": "瑞士租车 · 6天",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p2",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-3",
+        "originalAmountCents": 138000,
+        "baseAmountCents": 138000,
+        "currency": "CNY",
+        "category": "住宿",
+        "note": "苏黎世住宿 · 1晚",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p1",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-4",
+        "originalAmountCents": 276000,
+        "baseAmountCents": 276000,
+        "currency": "CNY",
+        "category": "住宿",
+        "note": "卢塞恩住宿 · 2晚",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p2",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-5",
+        "originalAmountCents": 438000,
+        "baseAmountCents": 438000,
+        "currency": "CNY",
+        "category": "住宿",
+        "note": "因特拉肯住宿 · 3晚",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p1",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-6",
+        "originalAmountCents": 220000,
+        "baseAmountCents": 220000,
+        "currency": "CNY",
+        "category": "住宿",
+        "note": "米兰住宿 · 2晚",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p2",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-7",
+        "originalAmountCents": 240000,
+        "baseAmountCents": 240000,
+        "currency": "CNY",
+        "category": "住宿",
+        "note": "佛罗伦萨住宿 · 2晚",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p1",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-8",
+        "originalAmountCents": 260000,
+        "baseAmountCents": 260000,
+        "currency": "CNY",
+        "category": "住宿",
+        "note": "罗马住宿 · 2晚",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p2",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-9",
+        "originalAmountCents": 26800,
+        "baseAmountCents": 26800,
+        "currency": "CNY",
+        "category": "餐饮",
+        "note": "出发前聚餐",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p2",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      },
+      {
+        "id": "initial-bill-10",
+        "originalAmountCents": 32000,
+        "baseAmountCents": 32000,
+        "currency": "CNY",
+        "category": "交通",
+        "note": "机场接送预约",
+        "orderedAt": "2026-09-13T12:00",
+        "payerId": "p1",
+        "participantIds": [
+          "p1",
+          "p2"
+        ],
+        "createdAt": "2026-09-13T04:00:00Z",
+        "updatedAt": "2026-09-13T04:00:00Z"
+      }
+    ]
+  }
+}
