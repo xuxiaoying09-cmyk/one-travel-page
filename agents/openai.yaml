@@ -1,0 +1,4 @@
+interface:
+  display_name: "小颖旅行网页"
+  short_description: "把机票酒店和行程整理成手机旅行网页，包含地图门票自驾与分账"
+  default_prompt: "使用 $xiaoying-travel-page，根据我的旅行资料生成一个适合手机查看的旅行网页。"
