@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/travel-plan/schemas/trip-config.schema.json",
+  "title": "Travel Plan Module and Persistence Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "modules", "persistence"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "type": "string", "const": "1.0.0" },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "flights",
+        "overview",
+        "itinerary",
+        "tickets",
+        "todo",
+        "driving",
+        "ledger"
+      ],
+      "properties": {
+        "flights": { "type": "boolean" },
+        "overview": { "type": "boolean" },
+        "itinerary": { "type": "boolean" },
+        "tickets": { "type": "boolean" },
+        "todo": { "type": "boolean" },
+        "driving": { "type": "boolean" },
+        "ledger": { "type": "boolean" }
+      }
+    },
+    "persistence": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode"],
+          "properties": {
+            "mode": { "const": "local" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "sharedCollections"],
+          "properties": {
+            "mode": { "const": "d1" },
+            "apiBase": {
+              "type": "string",
+              "pattern": "^/(?!/)[^\\\\?#]+$",
+              "default": "/api/trip"
+            },
+            "sharedCollections": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "enum": ["todos", "tickets", "ledger"] }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "modules": {
+            "properties": { "tickets": { "const": true } },
+            "required": ["tickets"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "modules": {
+            "properties": { "itinerary": { "const": true } },
+            "required": ["itinerary"]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/travel-plan/schemas/source-facts.schema.json",
+  "title": "Private Travel Source Facts",
+  "description": "A private, provenance-preserving intermediate result. The schema is public; populated files stay outside the publishable template.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "sourceDocuments", "facts", "issues", "confirmations"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "sourceDocuments": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/sourceDocument" }
+    },
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trip", "places", "days", "flights", "tickets", "transport", "todo", "driving"],
+      "properties": {
+        "trip": { "$ref": "#/$defs/tripFacts" },
+        "places": {
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/placeId" },
+          "additionalProperties": { "$ref": "#/$defs/placeFact" }
+        },
+        "days": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/dayFact" }
+        },
+        "flights": {
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/flightId" },
+          "additionalProperties": { "$ref": "#/$defs/flightFact" }
+        },
+        "tickets": {
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/ticketId" },
+          "additionalProperties": { "$ref": "#/$defs/ticketFact" }
+        },
+        "transport": {
+          "type": "object",
+          "propertyNames": { "$ref": "#/$defs/transportId" },
+          "additionalProperties": { "$ref": "#/$defs/transportFact" }
+        },
+        "todo": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/todoFact" }
+        },
+        "driving": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "rentalIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/rentalId" } },
+            "transportIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/transportId" } },
+            "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+          }
+        }
+      }
+    },
+    "issues": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/issueId" },
+      "additionalProperties": { "$ref": "#/$defs/issue" }
+    },
+    "confirmations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["moduleSelection", "missingMaterials"],
+      "properties": {
+        "moduleSelection": { "$ref": "#/$defs/moduleConfirmation" },
+        "missingMaterials": { "$ref": "#/$defs/materialConfirmation" }
+      }
+    }
+  },
+  "$defs": {
+    "stableId": { "type": "string", "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)+$" },
+    "documentId": { "type": "string", "pattern": "^document-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "dayId": { "type": "string", "pattern": "^day-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "itemId": { "type": "string", "pattern": "^item-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "placeId": { "type": "string", "pattern": "^place-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "flightId": { "type": "string", "pattern": "^flight-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "ticketId": { "type": "string", "pattern": "^ticket-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "transportId": { "type": "string", "pattern": "^transport-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "rentalId": { "type": "string", "pattern": "^rental-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "todoId": { "type": "string", "pattern": "^todo-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "issueId": { "type": "string", "pattern": "^issue-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "sourceDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "mediaType", "pageCount"],
+      "properties": {
+        "id": { "$ref": "#/$defs/documentId" },
+        "mediaType": { "enum": ["application/pdf", "image/png", "image/jpeg", "text/plain", "other"] },
+        "pageCount": { "type": "integer", "minimum": 1 },
+        "privatePath": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["document", "user-confirmation"] },
+        "documentId": { "$ref": "#/$defs/documentId" },
+        "page": { "type": "integer", "minimum": 1 },
+        "label": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "kind": { "const": "document" } } },
+          "then": { "required": ["documentId", "page"] }
+        }
+      ]
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/sourceRef" }
+    },
+    "tripFacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "sourceRefs"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "language": { "type": "string", "minLength": 2 },
+        "primaryDestinationCountries": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+        },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "geo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lat", "lng"],
+      "properties": {
+        "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+        "lng": { "type": "number", "minimum": -180, "maximum": 180 }
+      }
+    },
+    "placeFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "category", "sourceRefs"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 1 },
+        "countryCode": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "geo": { "$ref": "#/$defs/geo" },
+        "address": { "type": "string" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "genericFact": {
+      "type": "object",
+      "required": ["sourceRefs"],
+      "properties": {
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "flightFact": {
+      "type": "object",
+      "required": ["sourceRefs"],
+      "properties": {
+        "status": { "enum": ["confirmed", "missing"] },
+        "title": { "type": "string", "minLength": 1 },
+        "missingFields": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "issueIds": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/issueId" }
+        },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "status": { "const": "missing" } },
+            "required": ["status"]
+          },
+          "then": { "required": ["title", "missingFields", "issueIds"] }
+        }
+      ]
+    },
+    "ticketFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "sourceRefs"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "placeIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/placeId" } },
+        "transportIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/transportId" } },
+        "materialStatus": { "enum": ["complete", "missing", "not-required"] },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "transportFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "sourceRefs"],
+      "properties": {
+        "mode": { "type": "string", "minLength": 1 },
+        "fromPlaceId": { "$ref": "#/$defs/placeId" },
+        "toPlaceId": { "$ref": "#/$defs/placeId" },
+        "viaPlaceIds": { "type": "array", "items": { "$ref": "#/$defs/placeId" } },
+        "routeStatus": { "enum": ["confirmed", "candidate", "unknown"] },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "dayFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sequence", "date", "title", "items", "sourceRefs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/dayId" },
+        "sequence": { "type": "integer", "minimum": 1 },
+        "date": { "type": "string", "format": "date" },
+        "title": { "type": "string", "minLength": 1 },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/dayItemFact" }
+        },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "dayItemFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "title", "sourceRefs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/itemId" },
+        "type": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "placeId": { "$ref": "#/$defs/placeId" },
+        "placeIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/placeId" } },
+        "flightId": { "$ref": "#/$defs/flightId" },
+        "ticketIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/ticketId" } },
+        "transportId": { "$ref": "#/$defs/transportId" },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "todoFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "sourceRefs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/todoId" },
+        "title": { "type": "string", "minLength": 1 },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "severity", "status", "title", "relatedRefs"],
+      "properties": {
+        "kind": { "enum": ["missing-material", "contradiction", "uncertain", "privacy-review"] },
+        "severity": { "enum": ["info", "warning", "error"] },
+        "status": { "enum": ["open", "resolved", "accepted-for-preview"] },
+        "title": { "type": "string", "minLength": 1 },
+        "relatedRefs": { "type": "array", "items": { "$ref": "#/$defs/stableId" } },
+        "sourceRefs": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "moduleFlags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["flights", "overview", "itinerary", "tickets", "todo", "driving", "ledger"],
+      "properties": {
+        "flights": { "type": "boolean" },
+        "overview": { "type": "boolean" },
+        "itinerary": { "type": "boolean" },
+        "tickets": { "type": "boolean" },
+        "todo": { "type": "boolean" },
+        "driving": { "type": "boolean" },
+        "ledger": { "type": "boolean" }
+      }
+    },
+    "moduleConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["pending", "confirmed"] },
+        "selection": { "$ref": "#/$defs/moduleFlags" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "confirmed" } } },
+          "then": { "required": ["selection"] }
+        }
+      ]
+    },
+    "materialConfirmation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "issueIds"],
+      "properties": {
+        "status": { "enum": ["pending", "confirmed"] },
+        "decision": { "enum": ["supplement", "preview"] },
+        "issueIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/issueId" } }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "confirmed" } } },
+          "then": { "required": ["decision"] }
+        }
+      ]
+    }
+  }
+}
