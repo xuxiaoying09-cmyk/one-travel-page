@@ -1,8 +1,6 @@
-# 小颖旅行网页 Skill
+# One Travel Page Skill
 
 把机票、酒店、每天的行程整理成一个手机上随时能查的网页。
-
-这是基于 [do 同学的 Travel-Plan-Page](https://github.com/do-tongxue/Travel-Plan-Page) 二次整理的个人版本，复用了瑞士＋意大利 13 天旅行页面的最终效果。
 
 ## 包含什么
 
@@ -17,15 +15,15 @@
 
 把本仓库地址发给 Codex，并说：
 
-> 安装这个仓库里的 xiaoying-travel-page Skill，根据我提供的机票、酒店和行程生成旅行网页。
+> 安装这个仓库里的 one-travel-page Skill，根据我提供的机票、酒店和行程生成旅行网页。
 
-也可以将整个仓库下载到 `~/.codex/skills/xiaoying-travel-page`，再在新对话中使用：
+也可以将整个仓库下载到 `~/.codex/skills/one-travel-page`，再在新对话中使用：
 
-> 使用 $xiaoying-travel-page，帮我生成一个旅行网页。
+> 使用 $one-travel-page，帮我生成一个旅行网页。
 
 附上旅行资料即可；没有的信息会留待补充。需要演示时可以说：
 
-> 使用 $xiaoying-travel-page，先生成瑞士＋意大利 13 天版本。
+> 使用 $one-travel-page，先生成瑞士＋意大利 13 天版本。
 
 ## 本地运行
 
@@ -52,3 +50,5 @@ npm run preview
 上游项目：**do-tongxue/Travel-Plan-Page**。本版整理者：**xuxiaoying09-cmyk**。
 
 保留上游代码和模板的 MIT 许可，具体见 [LICENSE](LICENSE)。本版主要加入最终页面的交互修正、官方门票入口、记账种子能力，以及可复用的 Skill 和独立项目生成脚本。第三方资产说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+
