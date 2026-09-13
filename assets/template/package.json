@@ -1,0 +1,15 @@
+{
+  "name": "xiaoying-travel-page-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:map": "node scripts/build-map.mjs",
+    "validate": "node scripts/validate-lite.mjs",
+    "test:runtime": "node --test tests/runtime/runtime-storage.test.cjs",
+    "preview": "node local-preview-server.mjs"
+  }
+}
