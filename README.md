@@ -22,6 +22,51 @@
 
 > 从一趟周末出游，到一次跨国长假，让攻略跟着你走。🌏
 
+## 看看做出来的样子 📸
+
+用 One Travel Page 生成并继续调整的 **瑞士 × 奥地利 × 意大利 · 20 天**旅行页面：瑞士段自驾，后续城市间乘火车。下面是实际页面截图。
+
+截图中的航班、租车费用和账单用于功能展示，不代表真实预订或实时报价；倒计时是截图时的状态。仓库内置的 `--demo` 仍为 13 天版本，20 天路线与火车重点标注是这次继续定制的效果。
+
+### ✈️ 航班一眼看清，地图按天切换
+
+去程、回程可以切换，起降时间、转机停留和出发倒计时集中展示。地图可以切换国家和日期，查看当天的路线。
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/screenshots/flights.png" alt="航班卡片与国家切换" width="360"></td>
+    <td width="50%"><img src="assets/screenshots/map.png" alt="意大利单日旅行路线图" width="360"></td>
+  </tr>
+</table>
+
+### 📅 每天去哪，展开就知道
+
+每天的游玩、住宿和交通放在一起。乘火车的日期带有醒目标签，展开后可以看到出发站、到达站和换乘说明。
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/screenshots/itinerary.png" alt="可折叠的每日行程及火车转场标签" width="360"></td>
+    <td width="50%"><img src="assets/screenshots/rail.png" alt="每日行程中的火车信息块" width="360"></td>
+  </tr>
+</table>
+
+### 🚗 自驾有提醒，出发有清单
+
+取还车时间、地点、车型、费用和检查事项集中查看；出发前把准备事项逐一勾选。
+
+<table>
+  <tr>
+    <td width="50%"><img src="assets/screenshots/driving.png" alt="瑞士六天租车与还车提醒" width="360"></td>
+    <td width="50%"><img src="assets/screenshots/checklist.png" alt="可添加和勾选的旅行前准备清单" width="360"></td>
+  </tr>
+</table>
+
+### 🧾 谁买单、谁分摊，一起算清楚
+
+记录付款人和参与分摊的人，汇总每个人的支付与应分摊金额，给出转账结算方案。截图展示了两人 20 笔账单的结算结果。
+
+<p align="center"><img src="assets/screenshots/ledger.png" alt="旅行记账与两人账单结算" width="480"></p>
+
 ## 在 Codex 中使用
 
 把本仓库地址发给 Codex，并说：
