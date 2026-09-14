@@ -34,8 +34,8 @@
 
 <table>
   <tr>
-    <td width="50%"><img src="assets/screenshots/flights.png" alt="航班卡片与国家切换" width="360"></td>
-    <td width="50%"><img src="assets/screenshots/map.png" alt="意大利单日旅行路线图" width="360"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/flights.png" alt="航班卡片与国家切换" width="360"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/map.png" alt="意大利单日旅行路线图" width="360"></td>
   </tr>
 </table>
 
@@ -45,8 +45,8 @@
 
 <table>
   <tr>
-    <td width="50%"><img src="assets/screenshots/itinerary.png" alt="可折叠的每日行程及火车转场标签" width="360"></td>
-    <td width="50%"><img src="assets/screenshots/rail.png" alt="每日行程中的火车信息块" width="360"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/itinerary.png" alt="可折叠的每日行程及火车转场标签" width="360"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/rail.png" alt="每日行程中的火车信息块" width="360"></td>
   </tr>
 </table>
 
@@ -56,8 +56,8 @@
 
 <table>
   <tr>
-    <td width="50%"><img src="assets/screenshots/driving.png" alt="瑞士六天租车与还车提醒" width="360"></td>
-    <td width="50%"><img src="assets/screenshots/checklist.png" alt="可添加和勾选的旅行前准备清单" width="360"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/driving.png" alt="瑞士六天租车与还车提醒" width="360"></td>
+    <td width="50%"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/checklist.png" alt="可添加和勾选的旅行前准备清单" width="360"></td>
   </tr>
 </table>
 
@@ -65,7 +65,7 @@
 
 记录付款人和参与分摊的人，汇总每个人的支付与应分摊金额，给出转账结算方案。截图展示了两人 20 笔账单的结算结果。
 
-<p align="center"><img src="assets/screenshots/ledger.png" alt="旅行记账与两人账单结算" width="480"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/xuxiaoying09-cmyk/one-travel-page/main/assets/screenshots/ledger.png" alt="旅行记账与两人账单结算" width="480"></p>
 
 ## 在 Codex 中使用
 
